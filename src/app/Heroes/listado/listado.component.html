@@ -1,0 +1,23 @@
+<p>listado works!</p>
+<div *ngIf="heroBorrado; else noBorrado">
+    <!--cuando se evalua como verdadera se muestra cuando es falsa no se muestra, se puede poner el else 
+evalua los if como si hicera la evaluacion de si heroeborrado es diferente de null-->
+    <h1>Heroe Borrado</h1>
+    <small>{{heroBorrado}} </small>
+</div>
+<ng-template #noBorrado>
+    <h3>No ha borrado nada.</h3>
+</ng-template>
+
+
+
+
+<button (click)="borrarHeroe()">Borrar</button>
+
+
+<ul>
+    <li *ngFor="let item of heroes; let i = index">
+       {{i+1}}-{{item}}
+
+    </li>
+</ul>
